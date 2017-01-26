@@ -1,0 +1,13 @@
+{
+    "name":        "nek/school-test-project",
+    "license":     "MIT",
+    "type":        "project",
+    "description": "This is a project to help students learn tests",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+    },
+    "require-dev": {
+    }
+}
