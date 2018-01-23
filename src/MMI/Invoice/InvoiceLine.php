@@ -57,7 +57,7 @@ class InvoiceLine
      */
     public function setVat($vat)
     {
-        $this->vat = $vat/100 + 1;
+        $this->vat = $vat / 100 + 1;
     }
 
     /**
@@ -67,6 +67,6 @@ class InvoiceLine
     {
         $amount = $this->amount;
 
-        return $amount + $this->vat * $amount;
+        return $this->vat * $amount;
     }
 }
