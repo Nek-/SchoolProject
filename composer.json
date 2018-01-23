@@ -7,6 +7,7 @@
         "psr-0": { "": "src/" }
     },
     "require": {
+        "fzaninotto/faker": "^1.7"
     },
     "require-dev": {
     }
