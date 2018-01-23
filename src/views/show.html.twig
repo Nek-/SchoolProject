@@ -1,0 +1,14 @@
+{% extends 'body.html.twig' %}
+
+
+{% block content %}
+    <table class="table table-bordered">
+        {% for line in invoice.lines %}
+            <tr>
+                <td>{{ line.description }}</td>
+                <td>{{ line.amount }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p><b>Total: {{ invoice.calculateTotal() }}</b></p>
+{% endblock content %}

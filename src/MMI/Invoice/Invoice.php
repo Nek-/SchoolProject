@@ -20,9 +20,29 @@ class Invoice
     /**
      * @param InvoiceLine $line
      */
-    public function add(InvoiceLine $line)
+    public function addLine(InvoiceLine $line)
     {
         $this->lines[] = $line;
+    }
+
+    /**
+     * @param InvoiceLine $lineToRemove
+     */
+    public function removeLine(InvoiceLine $lineToRemove)
+    {
+        foreach ($this->lines as $key => $line) {
+            if ($line == $lineToRemove) {
+                unset($this->lines[$key]);
+            }
+        }
+    }
+
+    /**
+     * @return array|InvoiceLine[]
+     */
+    public function getLines()
+    {
+        return $this->lines;
     }
 
     /**

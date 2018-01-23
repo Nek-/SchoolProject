@@ -60,6 +60,11 @@ class InvoiceLine
         $this->vat = $vat / 100 + 1;
     }
 
+    public function getVat()
+    {
+        return $this->vat;
+    }
+
     /**
      * @return float|int
      */

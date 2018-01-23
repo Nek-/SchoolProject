@@ -11,9 +11,9 @@ class InvoiceTest extends \PHPUnit\Framework\TestCase
     public function testGetNumberOfLines()
     {
         $invoice = new Invoice([new InvoiceLine]);
-        $invoice->add(new InvoiceLine());
-        $invoice->add(new InvoiceLine());
-        $invoice->add(new InvoiceLine());
+        $invoice->addLine(new InvoiceLine());
+        $invoice->addLine(new InvoiceLine());
+        $invoice->addLine(new InvoiceLine());
 
         $this->assertSame($invoice->getNumberOfLines(), 4);
     }
@@ -30,8 +30,8 @@ class InvoiceTest extends \PHPUnit\Framework\TestCase
         $line1 = $line1->reveal();
         $line2 = $line2->reveal();
 
-        $invoice->add($line1);
-        $invoice->add($line2);
+        $invoice->addLine($line1);
+        $invoice->addLine($line2);
 
         $this->assertEquals(111, $invoice->calculateTotal());
     }
