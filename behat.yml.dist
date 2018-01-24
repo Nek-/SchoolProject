@@ -1,0 +1,27 @@
+default:
+    suites:
+        my_suite:
+            contexts:
+                - FeatureContext
+                - Behat\MinkExtension\Context\MinkContext
+    extensions:
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            browser_name: chrome
+            base_url: http://localhost:8000/
+            goutte: ~
+            selenium2:
+                capabilities:
+                    # required by mink-extension 2.3
+                    marionette: null
+                    browserName: chrome
+                    browser: chrome
+                    version: 63
+            show_auto: false
+            show_cmd: firefox %s
+            javascript_session: selenium2
+
+            sessions:
+                default:
+                    goutte: ~
+            # selenium2:
+            #     capabilities: { "browserName": "chrome", "browser": "chrome", "version":  "29", 'chrome': {'switches':['--no-sandbox']}}

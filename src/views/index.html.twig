@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1>Hello</h1>
-    <button id="swag" class="btn btn-success">Ajouter une ligne</button>
+    <a href="#" id="swag" class="btn btn-success">Ajouter une ligne</a>
     {{ form(form) }}
     <script>
         $('document').ready(function () {
@@ -13,6 +13,8 @@
             $('#swag').click(function () {
                 $invoiceLines.append($invoiceLines.data('prototype').replace(/__name__/g, id).replace(/label__/g, ' Invoice Line '));
                 id++;
+
+                return false;
             });
         });
     </script>
